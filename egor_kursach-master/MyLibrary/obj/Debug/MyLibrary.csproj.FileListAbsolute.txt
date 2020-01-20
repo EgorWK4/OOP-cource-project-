@@ -1,0 +1,5 @@
+C:\Users\Workflow\Desktop\CLR course proj\egor_kursach-master\MyLibrary\bin\Debug\MyLibrary.dll
+C:\Users\Workflow\Desktop\CLR course proj\egor_kursach-master\MyLibrary\bin\Debug\MyLibrary.pdb
+C:\Users\Workflow\Desktop\CLR course proj\egor_kursach-master\MyLibrary\obj\Debug\MyLibrary.csprojAssemblyReference.cache
+C:\Users\Workflow\Desktop\CLR course proj\egor_kursach-master\MyLibrary\obj\Debug\MyLibrary.dll
+C:\Users\Workflow\Desktop\CLR course proj\egor_kursach-master\MyLibrary\obj\Debug\MyLibrary.pdb

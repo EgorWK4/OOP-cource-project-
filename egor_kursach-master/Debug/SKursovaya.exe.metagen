@@ -1,0 +1,262 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly SKursovaya, Version=0.0.*, Culture=Инвариантный язык (Инвариантная страна): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class Command: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getHelpMessage(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    execute(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    getCommandName(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Interface IEntity: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, BeforeFieldInit
+  Methods:
+    Initialize(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetFileName(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetFileStr(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetId(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    SetId(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class KindOfSport: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    IEntity
+  Fields:
+    Int32 id : Public
+    System.String name : Public
+    Boolean areWarningAllowed : Public
+    Boolean arePlayersSwapAllowed : Public
+    Boolean areTimeOutAllowed : Public
+    Int32 numberOfPlayersPerTeam : Public
+    Int32 timeLength : Public
+    Int32 timesCount : Public
+  Methods:
+    Initialize(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetFileName(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetFileStr(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetId(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    SetId(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class Team: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    IEntity
+  Fields:
+    Int32 id : Public
+    System.String name : Public
+    Int32 sportId : Public
+    KindOfSport sport : Public
+  Methods:
+    Initialize(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetFileName(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetFileStr(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetId(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    SetId(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class Player: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    IEntity
+  Fields:
+    Int32 id : Public
+    System.String firstName : Public
+    System.String secondName : Public
+    Int32 teamId : Public
+    Team team : Public
+    Int32 age : Public
+    Int32 experience : Public
+  Methods:
+    Initialize(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetFileName(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetFileStr(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetId(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    SetId(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class WarnReason: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    IEntity
+  Fields:
+    Int32 id : Public
+    System.String description : Public
+  Methods:
+    Initialize(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetFileName(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetFileStr(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetId(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    SetId(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class Warning: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    IEntity
+  Fields:
+    Int32 id : Public
+    Int32 playerId : Public
+    Player player : Public
+    Int32 warningReasonId : Public
+    WarnReason warningReason : Public
+  Methods:
+    Initialize(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetFileName(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetFileStr(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetId(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    SetId(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class FileDB: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String FilesPath 'get set' : 
+  Methods:
+    get_FilesPath(): PrivateScope, Public, Static, HideBySig, SpecialName
+    set_FilesPath(String): PrivateScope, Public, Static, HideBySig, SpecialName
+    GetDataFromFile(): PrivateScope, Public, Static, HideBySig
+    GetEntityById(Int32): PrivateScope, Public, Static, HideBySig
+    Delete(T): PrivateScope, Public, Static, HideBySig
+    Update(T): PrivateScope, Public, Static, HideBySig
+    Create(T): PrivateScope, Public, Static, HideBySig
+    SetFilesPath(): PrivateScope, Public, Static, HideBySig
+Class Game: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    IEntity
+  Fields:
+    Int32 id : Public
+    Int32 firstTeamId : Public
+    Int32 secondTeamId : Public
+    Team firstTeam : Public
+    Team secondTeam : Public
+    Boolean isFinished : Public
+    Int32 firstScore : Public
+    Int32 secondScore : Public
+    System.Collections.Generic.List`1[Warning] warnings : Public
+  Methods:
+    op_LessThan(Game): PrivateScope, Public, HideBySig, SpecialName
+    op_GreaterThan(Game): PrivateScope, Public, HideBySig, SpecialName
+    Initialize(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetFileName(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetFileStr(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetId(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    SetId(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class CreateWarningCommand: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Command
+    Void .ctor(Game): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Game game : Public
+  Methods:
+    getHelpMessage(): PrivateScope, Public, Virtual, HideBySig
+    getCommandName(): PrivateScope, Public, Virtual, HideBySig
+    execute(): PrivateScope, Public, Virtual, HideBySig
+Class GoalCommand: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Command
+    Void .ctor(Game): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getHelpMessage(): PrivateScope, Public, Virtual, HideBySig
+    getCommandName(): PrivateScope, Public, Virtual, HideBySig
+    execute(): PrivateScope, Public, Virtual, HideBySig
+Class DisqReason: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    IEntity
+  Fields:
+    Int32 id : Public
+    System.String description : Public
+  Methods:
+    Initialize(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetFileName(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetFileStr(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetId(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    SetId(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class Disqualification: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    IEntity
+  Fields:
+    DisqReason disqReason : Public
+    Player player : Public
+    Int32 id : Public
+    Int32 playerId : Public
+    Int32 disqReasonId : Public
+  Methods:
+    Initialize(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetFileName(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetFileStr(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetId(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    SetId(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class CreateDisqualificationCommand: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Command
+    Void .ctor(Game): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getCommandName(): PrivateScope, Public, Virtual, HideBySig
+    getHelpMessage(): PrivateScope, Public, Virtual, HideBySig
+    execute(): PrivateScope, Public, Virtual, HideBySig
+Class GameEndCommand: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Command
+    Void .ctor(Game): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getCommandName(): PrivateScope, Public, Virtual, HideBySig
+    getHelpMessage(): PrivateScope, Public, Virtual, HideBySig
+    execute(): PrivateScope, Public, Virtual, HideBySig
+Class GetGameStatistic: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Command
+    Void .ctor(Game): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getCommandName(): PrivateScope, Public, Virtual, HideBySig
+    getHelpMessage(): PrivateScope, Public, Virtual, HideBySig
+    execute(): PrivateScope, Public, Virtual, HideBySig
+Class GameExecutor: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Game): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    execute(): PrivateScope, Public, HideBySig
+Class StartNewGame: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Command
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    execute(): PrivateScope, Public, Virtual, HideBySig
+    getHelpMessage(): PrivateScope, Public, Virtual, HideBySig
+    getCommandName(): PrivateScope, Public, Virtual, HideBySig
+Class GetTeamsListCommand: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Command
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getCommandName(): PrivateScope, Public, Virtual, HideBySig
+    getHelpMessage(): PrivateScope, Public, Virtual, HideBySig
+    execute(): PrivateScope, Public, Virtual, HideBySig
+Class GetSportsNames: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Command
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getCommandName(): PrivateScope, Public, Virtual, HideBySig
+    getHelpMessage(): PrivateScope, Public, Virtual, HideBySig
+    execute(): PrivateScope, Public, Virtual, HideBySig
+Class ListGamesCommand: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Command
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getHelpMessage(): PrivateScope, Public, Virtual, HideBySig
+    getCommandName(): PrivateScope, Public, Virtual, HideBySig
+    execute(): PrivateScope, Public, Virtual, HideBySig
+Class CommandShell: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    execute(): PrivateScope, Public, HideBySig
+Class CreateSportCommand: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Command
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getHelpMessage(): PrivateScope, Public, Virtual, HideBySig
+    getCommandName(): PrivateScope, Public, Virtual, HideBySig
+    execute(): PrivateScope, Public, Virtual, HideBySig
+Class AdminShell: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    execute(): PrivateScope, Public, HideBySig
+Class AdminLoginCommand: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Command
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getHelpMessage(): PrivateScope, Public, Virtual, HideBySig
+    getCommandName(): PrivateScope, Public, Virtual, HideBySig
+    execute(): PrivateScope, Public, Virtual, HideBySig
